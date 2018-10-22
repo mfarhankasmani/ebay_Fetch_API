@@ -1,0 +1,25 @@
+{
+  "name": "ebay-api-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "8.9.4",
+    "npm": "5.6.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run webhook\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "author": "Farhan kasmani",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ebay-api": "^1.13.7",
+    "express": "^4.16.4",
+    "nodemon": "^1.18.4"
+  }
+}
